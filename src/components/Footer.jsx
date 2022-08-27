@@ -6,7 +6,7 @@ function Footer() {
                     <p>
                     © {new Date().getFullYear()} Copyright Text
                     </p>
-                    <a className="grey-text text-lighten-4 right" href="/">Repo</a>
+                    <a href="https://raydenker.github.io/Shop/" className="grey-text text-lighten-4 right">Repo</a>
                 </div>
             </div>
         </footer>

@@ -14,7 +14,8 @@ function GoodsItem(props) {
     >
       <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
         <img
-          src={full_background}
+      
+          src={full_background ? full_background : `https://via.placeholder.com/230x320?text=${name}`}
           alt={name}
           className="w-full h-full object-center object-cover lg:w-full lg:h-full"
         />
