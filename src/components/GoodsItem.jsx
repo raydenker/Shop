@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { ShopContext } from "../Context"
+
 function GoodsItem(props) {
   const {
     id,
@@ -5,8 +8,10 @@ function GoodsItem(props) {
     description,
     price,
     full_background,
-    AddGoods = Function.prototype,
+    // AddGoods = Function.prototype,
   } = props
+
+  const {AddGoods = Function.prototype} = useContext(ShopContext)
   return (
     <div
       key={id}

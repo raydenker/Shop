@@ -1,14 +1,18 @@
-import styles from '../index.css'
+import { useContext } from "react"
+import { ShopContext } from "../Context"
+
+
+// import styles from '../index.css'
+
 function BascetItem(props) {
   const {
     id,
     name,
     price,
-    quantity,
-    removeFromBasket = Function.prototype,
-    decQuantity = Function.prototype,
-    incQuantity = Function.prototype,
+    quantity,   
   } = props
+  const {removeFromBasket, decQuantity, incQuantity}= useContext(ShopContext)
+
   return (
     <div
       key={id}

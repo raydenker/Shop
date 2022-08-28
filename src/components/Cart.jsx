@@ -1,6 +1,12 @@
+import { useContext } from "react"
+import { ShopContext } from "../Context"
+
 
 function Cart(props) {
-  const { quantity = 0, handlBasketShow = Function.prototype } = props
+  // const { quantity = 0, handlBasketShow = Function.prototype } = props
+
+  const {handlBasketShow, order}= useContext(ShopContext)
+  const quantity = order.length
   return (
     <>
       <button
