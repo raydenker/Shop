@@ -23,7 +23,7 @@ function Shop() {
     })
       .then((response) => response.json())
       .then((data) => {
-        data.specialFeatured && setGoods(data.specialFeatured)
+        setGoods(data.specialFeatured)
         // setLoading(false)
       })
     // eslint-disable-next-line
