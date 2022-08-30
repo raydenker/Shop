@@ -1,18 +1,18 @@
-import { useContext } from "react"
-import { ShopContext } from "../Context"
-
-
-// import styles from '../index.css'
+import { useContext } from 'react'
+import { ShopContext } from '../Context'
 
 function BascetItem(props) {
+  const {
+    removeFromBasket = Function.prototype,
+    decQuantity = Function.prototype,
+    incQuantity = Function.prototype,
+  } = useContext(ShopContext)
   const {
     id,
     name,
     price,
-    quantity,   
+    quantity,
   } = props
-  const {removeFromBasket, decQuantity, incQuantity}= useContext(ShopContext)
-
   return (
     <div
       key={id}
@@ -26,14 +26,14 @@ function BascetItem(props) {
         >
           remove
         </span>
-       <span className='shrink-0'> x {quantity}</span>
+        <span className="shrink-0"> x {quantity}</span>
         <span
           className="flex items-center justify-center text-md p-0.5 ml-2 mr-2 cursor-pointer border-2 border-indigo-500 material-symbols-outlined"
           onClick={() => incQuantity(id)}
         >
           add
         </span>
-       <span className='shrink-0'> =  {price * quantity}</span>
+        <span className="shrink-0"> = {price * quantity}</span>
       </p>
       <span
         className="material-symbols-outlined cursor-pointer"

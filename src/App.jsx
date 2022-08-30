@@ -3,16 +3,15 @@ import {Header} from "./components/Header"
 import {Footer} from "./components/Footer"
 import {Shop} from "./components/Shop"
 import styles from './index.css'
-import { ContextProvider } from "./Context"
-
+import { Context  } from "./Context"
 
 function App() {
   return (
     <>
     <Header/>
-    <ContextProvider>
+    <Context >
       <Shop/>
-    </ContextProvider>
+    </Context>
    
     <div className={styles.BasketItem}></div>
     <Footer/>

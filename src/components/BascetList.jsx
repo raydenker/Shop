@@ -1,10 +1,13 @@
+import { BascetItem } from './BascetItem'
 import { useContext } from 'react'
 import { ShopContext } from '../Context'
-// import { GoodsItem } from './GoodsItem'
-import { BascetItem } from './BascetItem'
 
-function BascetList() {
-  const { handlBasketShow, order = [] } = useContext(ShopContext)
+function BascetList(props) {
+  const {
+    order=[],
+    handlBasketShow = Function.prototype,
+  } = useContext(ShopContext)
+ 
 
   const totalPrice = order.reduce((sum, el) => {
     return sum + el.price * el.quantity
@@ -19,7 +22,12 @@ function BascetList() {
       </span>
       <h2 className="text-amber-500 text-2xl mb-4">Корзина</h2>
       {order.length ? (
-        order.map((item) => <BascetItem key={item.id} {...item} />)
+        order.map((item) => (
+         <BascetItem
+            key={item.id}
+            {...item}
+          />
+        ))
       ) : (
         <div className="Basket-item bg-indigo-50 text-amber-500 py-2 px-4 mb-5 flex justify-between">
           <p>Корзина пуста</p>
@@ -29,7 +37,7 @@ function BascetList() {
         <span>Общая стоимость</span>
         <span className="text-2xl">{totalPrice}руб</span>
       </p>
-      <button className="block px-5 py-3 bg-amber-500 text-white text-xl font-medium mt-3">
+      <button className='block px-5 py-3 bg-amber-500 text-white text-xl font-medium mt-3'>
         Оформить
       </button>
     </div>

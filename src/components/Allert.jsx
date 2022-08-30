@@ -1,11 +1,8 @@
-import { useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import { ShopContext } from '../Context'
-import { useEffect } from 'react'
 
 function Allert(props) {
-  // const { name = '', closeAlert = Function.prototype } = props
-
-  const { closeAlert = Function.prototype, alertName: name = '' } = useContext(
+  const { alertName: name = '', closeAlert = Function.prototype } = useContext(
     ShopContext,
   )
   useEffect(() => {
